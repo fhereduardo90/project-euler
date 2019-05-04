@@ -1,14 +1,13 @@
 def sum_even_numbers():
-    prev = 0
-    nxt = 1
+    prev = 1
+    nxt = 2
     sum = 0
 
     while nxt <= 4000000:
-        if nxt % 2 == 0:
-            sum += nxt
+        sum += nxt
 
-        nxt = prev + nxt
-        prev = nxt - prev
+        nxt = (((prev * 2) + (nxt * 3)))
+        prev = (nxt - (((nxt - (prev * 2)) // 3) + prev))
     else:
         return sum
 
