@@ -1,9 +1,12 @@
-def sum_multiples(num):
-    m_5 = (i for i in range(5, num, 5))
-    m_3 = (i for i in range(3, num, 3))
-    m_15 = (i for i in range(15, num, 15))
+import math
 
-    return sum(set(m_15).symmetric_difference(m_3) | set(m_15).symmetric_difference(m_5))
+
+def sum_multiples(number):
+    t_3 = 3 * (math.floor(number/3) * (math.floor(number/3)+1))/2
+    t_5 = 5 * (math.floor(number/5) * (math.floor(number/5)+1))/2
+    t_15 = 15 * (math.floor(number/15) * (math.floor(number/15)+1))/2
+
+    return (t_3 + t_5) - t_15
 
 
 print(sum_multiples(1000))
