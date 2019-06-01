@@ -11,12 +11,12 @@ def sum_adjacents(interval):
         # stop recursive calls when "end" is greater than the last position on the serie
         if end > stop:
             return acc
-        # if the first position of the new serie is a zero, then move forward one position
+        # if the first position of the new serie is zero, then move forward one position
         elif int(chunk[0]) == 0:
             start += 1
             end += 1
             return multiply(SERIE[start:end], start, end, acc)
-        # if the last position of the serie is a zero, then discard the current group and move the cursor 4 position forward
+        # if the last position of the serie is zero, then discard the current group and move the cursor 4 position forward
         elif int(chunk[interval - 1]) == 0:
             start = end
             end = start + interval
